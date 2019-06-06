@@ -8,10 +8,10 @@ script:
   - docker run hrudyusa/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t hrudyusa/multi-client -f ./client 
-  - docker build -t hrudyusa/multi-nginx -f ./nginx 
-  - docker build -t hrudyusa/multi-server -f ./server 
-  - docker build -t hrudyusa/multi-worker -f ./worker 
+  - docker build -t hrudyusa/multi-client  ./client 
+  - docker build -t hrudyusa/multi-nginx  ./nginx 
+  - docker build -t hrudyusa/multi-server  ./server 
+  - docker build -t hrudyusa/multi-worker  ./worker 
 # Log into docker CLI 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push hrudyusa/multi-client
