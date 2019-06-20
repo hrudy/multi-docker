@@ -19,15 +19,15 @@ after_success:
   - docker push hrudyusa/multi-server
   - docker push hrudyusa/multi-worker
 # take images and pushd them to docker-hub
-#deploy:
-#  provider: elasticbeanstalk
-#  region: "us-east-1"
-#  app: "docker-react"
-#  env: "DockerReact-env"
-#  bucket_name: "elasticbeanstalk-us-east-1-207076753345"
-#  bucket_path: "docker-react"
-#  on:
-#    branch: master
-#  access_key_id: $AWS_ACCESS_KEY
-#  secret_access_key:
-#    secure: "$AWS_SECRET_KEY"
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "MultiDocker-env"
+  env: "MultiDockerEnv-env"
+  bucket_name: "elasticbeanstalk-us-east-2-207076753345"
+  bucket_path: "docker-multi"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
