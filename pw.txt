@@ -1,3 +1,0 @@
-username:postgres
-password: postgres_password
-databasename: multidocker-postgres
